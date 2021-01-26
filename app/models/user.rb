@@ -3,6 +3,7 @@ class User < ApplicationRecord
   validates :email, presence: true
 
   def to_token_payload
-    { sub: id, email: email }
+    # TODO: add token params in the hash below
+    { sub: id, email: email, name: name, is_admin: admin } # email, name and is_admin are custom params
   end
 end
